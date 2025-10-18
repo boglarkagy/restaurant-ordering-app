@@ -1,0 +1,4 @@
+# Ignore them:
+.env
+test-env.js
+test.env
