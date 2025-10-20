@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import AddItemForm from './AddItemForm';
 
 function ItemsList() {
   const [items, setItems] = useState([]);
@@ -13,9 +14,14 @@ function ItemsList() {
     setItems(data);
   };
 
+  const handleItemAdded = (newItem) => {
+    setItems([...items, newItem]);
+  };
+
   return (
     <div>
       <h2>🍽️ Menu</h2>
+      <AddItemForm onItemAdded={handleItemAdded} />
       <ul>
         {items.map((item) => (
           <li key={item._id}>
